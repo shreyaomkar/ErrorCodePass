@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Receive_Request>
+    <Client>MVD</Client>
+    <FileID>MVD00000072</FileID>
+    <Date>3900-12-21T00:00:00+05:30</Date>
+    <Request_States>
+        <Request_State>
+            <Invoices>
+                <Invoice>
+                    <error_Code>404</error_Code>
+                    <inVoice_POS>abc</inVoice_POS>
+                    <status>0</status>
+                </Invoice>
+            </Invoices>
+            <discount_RequestID>50</discount_RequestID>
+            <error_Code>4cvc-datatype-valid.1.2.1: 'MVD00000072' is not a valid value for 'integer'.4cvc-type.3.1.3: The value 'MVD00000072' of element 'FileID' is not valid.5cvc-complex-type.2.4.a: Invalid content was found starting with element 'Date'. One of '{Receive_Time}' is expected.8cvc-complex-type.2.3: Element 'discount_RequestID' cannot have character [children], because the type's content type is element-only.8cvc-complex-type.2.4.b: The content of element 'discount_RequestID' is not complete. One of '{discount_RequestID}' is expected.9cvc-complex-type.2.3: Element 'error_Code' cannot have character [children], because the type's content type is element-only.9cvc-complex-type.2.4.b: The content of element 'error_Code' is not complete. One of '{error_Code}' is expected.10cvc-complex-type.2.4.a: Invalid content was found starting with element 'status'. One of '{error_Code}' is expected.10cvc-complex-type.2.3: Element 'status' cannot have character [children], because the type's content type is element-only.10cvc-complex-type.2.4.b: The content of element 'status' is not complete. One of '{status}' is expected.</error_Code>
+            <status>1</status>
+        </Request_State>
+    </Request_States>
+</Receive_Request>

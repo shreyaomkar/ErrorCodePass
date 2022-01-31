@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Receive_Request">
+		<xs:complexType>
+			<xs:sequence>
+				 <xs:element name="Client">
+				 	<xs:simpleType>
+				 		<xs:restriction base = "xs:string">
+         					<xs:pattern value = "([A-Z])*"/>
+      					</xs:restriction>
+				 	</xs:simpleType>
+				 </xs:element>
+				 <xs:element name="FileID">
+				 	<xs:simpleType>
+				 		<xs:restriction base = "xs:integer">
+					         <xs:minInclusive value = "0"/>
+					         <xs:maxInclusive value = "100"/>
+		      			</xs:restriction>
+				 	</xs:simpleType>
+				 </xs:element>
+				 <xs:element name="Receive_Time">
+				 	<xs:simpleType>
+				 		<xs:restriction base = "xs:dateTime">
+         					<xs:pattern value=".*T[^Z+-]*" />
+      					</xs:restriction>
+				 	</xs:simpleType>
+				 </xs:element>
+				 <xs:element name="Request_States">
+				 	<xs:complexType>
+				 		<xs:sequence>
+				 			<xs:element name="Request_State">
+								<xs:complexType>
+									<xs:sequence>
+							 			<xs:element name = 'discount_RequestID' type = 'requestType' minOccurs = '0' maxOccurs = "unbounded" />
+							 			<xs:element name = 'status' type = 'statusType' minOccurs = '0' maxOccurs = "unbounded" />
+							 			<xs:element name = 'error_Code' type = 'errorType' minOccurs = '0' maxOccurs = "unbounded" />
+							 		</xs:sequence>	
+						 		</xs:complexType>	
+						 	</xs:element>
+				 		</xs:sequence>
+				 	</xs:complexType>
+				 </xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>  
+	
+	<xs:complexType name = "requestType">
+      <xs:sequence>
+         <xs:element name = "discount_RequestID">
+         	<xs:simpleType>
+         		<xs:restriction base = "xs:integer">
+		         <xs:minInclusive value = "0"/>
+		         <xs:maxInclusive value = "100"/>
+		      	</xs:restriction>
+		   </xs:simpleType>
+		  </xs:element>
+      </xs:sequence>
+   </xs:complexType>	
+   <xs:complexType name = "statusType">
+      <xs:sequence>
+         <xs:element name = "status">
+         	<xs:simpleType>
+         		<xs:restriction base = "xs:integer">
+		         <xs:minInclusive value = "0"/>
+		         <xs:maxInclusive value = "100"/>
+		      	</xs:restriction>
+		   </xs:simpleType>
+		  </xs:element>
+      </xs:sequence>
+   </xs:complexType>	
+   <xs:complexType name = "errorType">
+      <xs:sequence>
+         <xs:element name = "error_Code">
+         	<xs:simpleType>
+         		<xs:restriction base = "xs:string">
+		         	<xs:pattern value = "."/>
+		      	</xs:restriction>
+		   </xs:simpleType>
+		  </xs:element>
+      </xs:sequence>
+   </xs:complexType>	
+</xs:schema>
